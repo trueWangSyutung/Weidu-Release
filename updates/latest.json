@@ -1,48 +1,46 @@
 {
-  "versionCode": 103,
-  "versionName": "0.0.7",
-  "tag": "v0.0.7",
-  "title": "未读 0.0.7",
-  "summary": "端侧模型：下载改为断点续传（`Range` + 保留 `.part`）并按远端大小校验完整性，",
+  "versionCode": 104,
+  "versionName": "0.0.8",
+  "tag": "v0.0.8",
+  "title": "未读 0.0.8",
+  "summary": "端侧模型：给裁剪过的 `libonnxruntime-genai*.so` 补回最小合法 section 表，",
   "publishedAt": "2026-11-22",
-  "sizeBytes": 68300276,
-  "sha256": "B37620D82058A4F4784AD0F0CAE9F90CD89C46547B5FBF27277D3537ED4B7C84",
-  "apkUrl": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.7/weidu-0.0.7.apk",
+  "sizeBytes": 68299480,
+  "sha256": "3698811D20A75964A4E70E85131A8104E38DB90E3F3B8C77E2C580D21C10D4F6",
+  "apkUrl": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8.apk",
   "assets": {
-    "android": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.7/weidu-0.0.7.apk",
-    "windows": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.7/weidu-0.0.7.msi",
-    "windows-zip": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.7/weidu-0.0.7-windows-x64.zip"
+    "android": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8.apk",
+    "windows": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8.msi",
+    "windows-zip": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8-windows-x64.zip"
   },
   "assetSha256": {
-    "android": "B37620D82058A4F4784AD0F0CAE9F90CD89C46547B5FBF27277D3537ED4B7C84",
-    "windows": "6CBEDBB3C19CB92C16995AF63F1C85605EE9B5BCEB076DDBFB0DEE57662FB89D",
-    "windows-zip": "F16FF1A47C2ADA722013E4FB5E648EE19BE55D926005EF0847C5C76CEBE2D7FB"
+    "android": "3698811D20A75964A4E70E85131A8104E38DB90E3F3B8C77E2C580D21C10D4F6",
+    "windows": "A49B02B7550D98890B1D2203E4DBDCE5F2994804A96953CC1CCE6CF93EA0984B",
+    "windows-zip": "A8ADC6ED4172F660CFD6071F845CA4AF516EE962140ACAEEB55771B4E638FF20"
   },
   "assetSizes": {
-    "android": 68300276,
-    "windows": 146266254,
-    "windows-zip": 144837337
+    "android": 68299480,
+    "windows": 146266253,
+    "windows-zip": 144837494
   },
   "sections": [
     {
       "icon": "fix",
       "title": "修复",
       "items": [
-        "端侧模型：下载改为断点续传（`Range` + 保留 `.part`）并按远端大小校验完整性，",
-        "端侧模型：一次加载失败后不再被永久判定为「未安装」，可反复重试；失败提示会带上",
-        "端侧模型：修复裁剪后的 `libonnxruntime-genai.so` 被 Android 链接器拒绝加载",
-        "端侧模型：启动时显式预加载 native 库，失败时给出具体是哪个库、什么 `dlopen` 原因，",
-        "标题栏：标题按整条 appbar 居中，不再因为右侧按钮更多而整体偏左。",
-        "标题栏：右侧默认只显示一个动作；动作超过一个时收成「更多」，用液态玻璃菜单展开。"
+        "端侧模型：给裁剪过的 `libonnxruntime-genai*.so` 补回最小合法 section 表，",
+        "首页推荐：不再把负分显示成「推荐分 -1」；探索位的理由是「探索 · 给你换个口味」，",
+        "报告 / 搜索 / 订阅源：顶栏统一为新样式（标题按整屏居中、右侧单动作 + 玻璃菜单）。"
       ]
     },
     {
-      "icon": "tune",
-      "title": "优化",
+      "icon": "spark",
+      "title": "新增",
       "items": [
-        "模型卡片显示实际文件大小，并提供「校验 / 修复」入口。"
+        "端侧推理进行中：Android 显示常驻进度通知（Android 16 起由系统呈现为 Live Update），",
+        "iOS：新增 Live Activity（灵动岛 / 锁屏）组件与 `WeiduLiveActivityBridge`，"
       ]
     }
   ],
-  "notes": "## v0.0.7（2026-11-22）\n\n### 修复\n\n- 端侧模型：下载改为断点续传（`Range` + 保留 `.part`）并按远端大小校验完整性，\n  网络中断后再次点击即可继续，不再从头下载 500MB；被中断留下的半截 `model.onnx`\n  会自动当作 `.part` 续传修复。\n- 端侧模型：一次加载失败后不再被永久判定为「未安装」，可反复重试；失败提示会带上\n  真实异常类型与原因。\n- 端侧模型：修复裁剪后的 `libonnxruntime-genai.so` 被 Android 链接器拒绝加载\n  （`has invalid e_shstrndx`）导致模型永远「加载失败」的问题；打包时禁止 AGP\n  对已裁剪的 `.so` 再做一次 llvm-strip。\n- 端侧模型：启动时显式预加载 native 库，失败时给出具体是哪个库、什么 `dlopen` 原因，\n  不再只显示 `NoClassDefFoundError`。\n- 标题栏：标题按整条 appbar 居中，不再因为右侧按钮更多而整体偏左。\n- 标题栏：右侧默认只显示一个动作；动作超过一个时收成「更多」，用液态玻璃菜单展开。\n\n### 优化\n\n- 模型卡片显示实际文件大小，并提供「校验 / 修复」入口。"
+  "notes": "## v0.0.8（2026-11-22）\n\n### 修复\n\n- 端侧模型：给裁剪过的 `libonnxruntime-genai*.so` 补回最小合法 section 表，\n  即使打包工具（如 Android Studio 自带的 NDK）再做一次 `llvm-strip`，也不会再出现\n  `dlopen failed: ... has invalid e_shstrndx`；配合 `keepDebugSymbols` 双重保险。\n- 首页推荐：不再把负分显示成「推荐分 -1」；探索位的理由是「探索 · 给你换个口味」，\n  且只有正分才显示分数徽标。\n- 报告 / 搜索 / 订阅源：顶栏统一为新样式（标题按整屏居中、右侧单动作 + 玻璃菜单）。\n\n### 新增\n\n- 端侧推理进行中：Android 显示常驻进度通知（Android 16 起由系统呈现为 Live Update），\n  包含已生成 tokens 与进度条。\n- iOS：新增 Live Activity（灵动岛 / 锁屏）组件与 `WeiduLiveActivityBridge`，\n  待 MLX 端侧推理接入后可直接调用；需在 Xcode 中重新执行 `xcodegen generate`。"
 }
