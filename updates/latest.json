@@ -5,8 +5,8 @@
     "title":  "未读 0.0.6",
     "summary":  "播客本地合成、媒体封面与日报直达文章；检查更新改为 latest.json 清单；Android 安装包压缩到约 65MB，并提供 Windows MSI / 便携 ZIP。",
     "publishedAt":  "2026-11-21",
-    "sizeBytes":  68292436,
-    "sha256":  "C470327298168EF4E7DF02EED1F68AEEDBBCC3569A69A3434532EC628717156A",
+    "sizeBytes":  68295452,
+    "sha256":  "98AA2572635EB31B6D59C7F5021BE46F1D5BDDA5F0F9DCF8D506CC6DB18EE48F",
     "apkUrl":  "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.6/weidu-0.0.6.apk",
     "assets":  {
                    "android":  "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.6/weidu-0.0.6.apk",
@@ -47,13 +47,13 @@
                  ],
     "notes":  "## v0.0.6（2026-11-21）\r\n\r\n### 新增\r\n\r\n- 技能：新增「每周回顾」「多源交叉验证」「精读与笔记」「翻译与双语对照」「播客口播稿」「阅读计划」，\r\n  内置技能达到 9 个；同时新增 `summarize_article`、`translate_article`、`save_article`、\r\n  `list_saved`、`get_usage` 五个内置工具，技能可直接落库、翻译与查账。\r\n- 对话引用文章：从阅读页「问 AI」或 @ 提及时，文章正文会作为系统上下文随请求发送，\r\n  最多 3 篇、每篇 4,000 字，并计入上下文占用；输入框上方显示引用胶囊，可单独移除。\r\n- 端侧推理：展示并持久化 Qwen3 的思考过程，重开会话仍可回看；思考压缩/展开按行内步骤呈现。\r\n- 播客合成方式可选：云端 MiMo 或 Android 本地 Sherpa；本地合成会在手机上逐段生成并拼接成整集 WAV。\r\n- 系统媒体通知展示播客名称与播客封面（episode coverUrl），没有封面时回退品牌封面。\r\n- 日报条目整卡可点，优先打开本地文章详情页；本地找不到时回退原文链接。\r\n- 检查更新改为 `updates/latest.json` 清单优先（参考 Suixing）：读取 versionCode、结构化更新日志、\r\n  SHA-256 与安装包地址；Android 支持应用内下载、校验并拉起安装器，桌面端下载后交给系统打开。\r\n\r\n### 优化\r\n\r\n- 首页：顶部大数字改为「今天发布且未读」的篇数，不再混入历史未读；推荐卡片显示推荐分。\r\n- 对话页：顶栏改为悬浮圆形玻璃按钮 + 居中会话标题（参考 2.0 稿）；工具与思考改为行内步骤时间线，\r\n  支持失败标记、耗时与展开参数/返回。\r\n- 全部二级页面的返回栏统一为悬浮圆形按钮 + 居中标题。\r\n\r\n### 修复\r\n\r\n- 播客：语音合成改用独立的 `tts.*` 配置（默认 MiMo），不再跟随对话 Provider；切换到端侧模型后\r\n  不再因为 `local://` 地址报「生成失败：null」，错误信息统一给出可读原因。\r\n- 推荐/对话：上下文面板与「上下文详情」使用同一份估算，引用文章、工具结果会正确计入。",
     "assetSha256":  {
-                        "android":  "C470327298168EF4E7DF02EED1F68AEEDBBCC3569A69A3434532EC628717156A",
-                        "windows":  "6387CFF76375565007245A66F6844494122E7CD75ACECC45D5B8D75974AC09D6",
-                        "windows-zip":  "B617FCAC98DD5EA91537CCCB87CBF8F7FDDAA4917C63AC3906A3879DF86E2DEE"
+                        "android":  "98AA2572635EB31B6D59C7F5021BE46F1D5BDDA5F0F9DCF8D506CC6DB18EE48F",
+                        "windows":  "83F4DECC9B0ECEF27B5BD955C4815865CDF889E470127A8EC0F764F728528741",
+                        "windows-zip":  "769805BE2DA17EF7136C8F0E571C65FB37BBBB88407DA44DB002AD902C1886FE"
                     },
     "assetSizes":  {
-                       "android":  68292436,
-                       "windows":  146253964,
-                       "windows-zip":  144826469
+                       "android":  68295452,
+                       "windows":  146262159,
+                       "windows-zip":  144830886
                    }
 }
