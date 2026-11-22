@@ -1,46 +1,37 @@
 {
-  "versionCode": 104,
-  "versionName": "0.0.8",
-  "tag": "v0.0.8",
-  "title": "未读 0.0.8",
-  "summary": "端侧模型：给裁剪过的 `libonnxruntime-genai*.so` 补回最小合法 section 表，",
+  "versionCode": 105,
+  "versionName": "0.0.9",
+  "tag": "v0.0.9",
+  "title": "未读 0.0.9",
+  "summary": "端侧模型：`libonnxruntime-genai*.so` 改为保留**完整 section 表**（含 `.dynamic` /",
   "publishedAt": "2026-11-22",
-  "sizeBytes": 68299480,
-  "sha256": "3698811D20A75964A4E70E85131A8104E38DB90E3F3B8C77E2C580D21C10D4F6",
-  "apkUrl": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8.apk",
+  "sizeBytes": 68302156,
+  "sha256": "E27648963BBAC6B38BE4942F682B9751AEBE62E1C892C4C796D98B4143CFF10D",
+  "apkUrl": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9.apk",
   "assets": {
-    "android": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8.apk",
-    "windows": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8.msi",
-    "windows-zip": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.8/weidu-0.0.8-windows-x64.zip"
+    "android": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9.apk",
+    "windows": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9.msi",
+    "windows-zip": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9-windows-x64.zip"
   },
   "assetSha256": {
-    "android": "3698811D20A75964A4E70E85131A8104E38DB90E3F3B8C77E2C580D21C10D4F6",
-    "windows": "A49B02B7550D98890B1D2203E4DBDCE5F2994804A96953CC1CCE6CF93EA0984B",
-    "windows-zip": "A8ADC6ED4172F660CFD6071F845CA4AF516EE962140ACAEEB55771B4E638FF20"
+    "android": "E27648963BBAC6B38BE4942F682B9751AEBE62E1C892C4C796D98B4143CFF10D",
+    "windows": "60CD5A9F686ACD5458111341E51B89402B4F39F8394931ACF62E9A6FB86A3C81",
+    "windows-zip": "757AF302A199ADF43D0B0D168B15E75FFC71050B287F5BE58D9D02C6B804B51A"
   },
   "assetSizes": {
-    "android": 68299480,
-    "windows": 146266253,
-    "windows-zip": 144837494
+    "android": 68302156,
+    "windows": 146266254,
+    "windows-zip": 144837499
   },
   "sections": [
     {
       "icon": "fix",
       "title": "修复",
       "items": [
-        "端侧模型：给裁剪过的 `libonnxruntime-genai*.so` 补回最小合法 section 表，",
-        "首页推荐：不再把负分显示成「推荐分 -1」；探索位的理由是「探索 · 给你换个口味」，",
-        "报告 / 搜索 / 订阅源：顶栏统一为新样式（标题按整屏居中、右侧单动作 + 玻璃菜单）。"
-      ]
-    },
-    {
-      "icon": "spark",
-      "title": "新增",
-      "items": [
-        "端侧推理进行中：Android 显示常驻进度通知（Android 16 起由系统呈现为 Live Update），",
-        "iOS：新增 Live Activity（灵动岛 / 锁屏）组件与 `WeiduLiveActivityBridge`，"
+        "端侧模型：`libonnxruntime-genai*.so` 改为保留**完整 section 表**（含 `.dynamic` /",
+        "该版本 APK 的 `.so` 已静态校验：33/34 个节头完整、全部节数据在文件内。"
       ]
     }
   ],
-  "notes": "## v0.0.8（2026-11-22）\n\n### 修复\n\n- 端侧模型：给裁剪过的 `libonnxruntime-genai*.so` 补回最小合法 section 表，\n  即使打包工具（如 Android Studio 自带的 NDK）再做一次 `llvm-strip`，也不会再出现\n  `dlopen failed: ... has invalid e_shstrndx`；配合 `keepDebugSymbols` 双重保险。\n- 首页推荐：不再把负分显示成「推荐分 -1」；探索位的理由是「探索 · 给你换个口味」，\n  且只有正分才显示分数徽标。\n- 报告 / 搜索 / 订阅源：顶栏统一为新样式（标题按整屏居中、右侧单动作 + 玻璃菜单）。\n\n### 新增\n\n- 端侧推理进行中：Android 显示常驻进度通知（Android 16 起由系统呈现为 Live Update），\n  包含已生成 tokens 与进度条。\n- iOS：新增 Live Activity（灵动岛 / 锁屏）组件与 `WeiduLiveActivityBridge`，\n  待 MLX 端侧推理接入后可直接调用；需在 Xcode 中重新执行 `xcodegen generate`。"
+  "notes": "## v0.0.9（2026-11-22）\n\n### 修复\n\n- 端侧模型：`libonnxruntime-genai*.so` 改为保留**完整 section 表**（含 `.dynamic` /\n  `.dynsym` / `.gnu.hash` 等），只丢弃 debug 节数据。此前整表删除会让 Android 16\n  链接器依次报 `has invalid e_shstrndx`、`.dynamic section header was not found`。\n- 该版本 APK 的 `.so` 已静态校验：33/34 个节头完整、全部节数据在文件内。"
 }
