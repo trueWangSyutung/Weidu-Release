@@ -1,37 +1,56 @@
 {
-  "versionCode": 105,
-  "versionName": "0.0.9",
-  "tag": "v0.0.9",
-  "title": "未读 0.0.9",
-  "summary": "端侧模型：`libonnxruntime-genai*.so` 改为保留**完整 section 表**（含 `.dynamic` /",
+  "versionCode": 106,
+  "versionName": "0.0.10",
+  "tag": "v0.0.10",
+  "title": "未读 0.0.10",
+  "summary": "Android 对外 MCP 服务：Ktor CIO 绑定 127.0.0.1，`POST /mcp`（JSON-RPC）与",
   "publishedAt": "2026-11-22",
-  "sizeBytes": 68302156,
-  "sha256": "E27648963BBAC6B38BE4942F682B9751AEBE62E1C892C4C796D98B4143CFF10D",
-  "apkUrl": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9.apk",
+  "sizeBytes": 69645557,
+  "sha256": "FD2216524599CF613318FA5B3CA6C15DBF8A62252072F16D6D8B33A460484D75",
+  "apkUrl": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.10/weidu-0.0.10.apk",
   "assets": {
-    "android": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9.apk",
-    "windows": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9.msi",
-    "windows-zip": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.9/weidu-0.0.9-windows-x64.zip"
+    "android": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.10/weidu-0.0.10.apk",
+    "windows": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.10/weidu-0.0.10.msi",
+    "windows-zip": "https://github.com/trueWangSyutung/Weidu-Release/releases/download/v0.0.10/weidu-0.0.10-windows-x64.zip"
   },
   "assetSha256": {
-    "android": "E27648963BBAC6B38BE4942F682B9751AEBE62E1C892C4C796D98B4143CFF10D",
-    "windows": "60CD5A9F686ACD5458111341E51B89402B4F39F8394931ACF62E9A6FB86A3C81",
-    "windows-zip": "757AF302A199ADF43D0B0D168B15E75FFC71050B287F5BE58D9D02C6B804B51A"
+    "android": "FD2216524599CF613318FA5B3CA6C15DBF8A62252072F16D6D8B33A460484D75",
+    "windows": "110877E313AC4FAB905065B5E81015F0C789A632E854D3FD955B8374D39E150F",
+    "windows-zip": "D47413735B0B070001512E2EEBEC115A25E5C03E3170BE481EBA25721DD5C2D1"
   },
   "assetSizes": {
-    "android": 68302156,
-    "windows": 146266254,
-    "windows-zip": 144837499
+    "android": 69645557,
+    "windows": 146278541,
+    "windows-zip": 144851302
   },
   "sections": [
+    {
+      "icon": "spark",
+      "title": "新增",
+      "items": [
+        "Android 对外 MCP 服务：Ktor CIO 绑定 127.0.0.1，`POST /mcp`（JSON-RPC）与",
+        "技能（skills）：仓库根目录 `skills/` 会打包进 APK assets，Android 启动时扫描"
+      ]
+    },
     {
       "icon": "fix",
       "title": "修复",
       "items": [
-        "端侧模型：`libonnxruntime-genai*.so` 改为保留**完整 section 表**（含 `.dynamic` /",
-        "该版本 APK 的 `.so` 已静态校验：33/34 个节头完整、全部节数据在文件内。"
+        "播客：改为「逐篇分段生成」——挑最近的 3 篇（云端 5 篇），每篇单独请求一次"
+      ]
+    },
+    {
+      "icon": "tune",
+      "title": "优化",
+      "items": [
+        "正文（bodyLarge / bodyMedium / bodySmall）统一改用霞鹜文楷 LXGW WenKai，标题继续使用同一字体。",
+        "顶栏「更多」菜单宽度跟随内容（`IntrinsicSize.Max` + min/max 兜底），不再铺满屏幕；",
+        "首页顶部纸面：背景与描边统一使用底部圆角形状，去掉方角背景露在圆角外的色块断层。",
+        "推理进度通知改为挂在 AI 网关层：无论端侧还是云端对话，发起推理时都会显示",
+        "通知渠道改为 `IMPORTANCE_DEFAULT`（LOW 不会被系统提升），Android 16 上可被",
+        "端侧模型卡片新增「允许提升通知 / 去开启」入口，直达"
       ]
     }
   ],
-  "notes": "## v0.0.9（2026-11-22）\n\n### 修复\n\n- 端侧模型：`libonnxruntime-genai*.so` 改为保留**完整 section 表**（含 `.dynamic` /\n  `.dynsym` / `.gnu.hash` 等），只丢弃 debug 节数据。此前整表删除会让 Android 16\n  链接器依次报 `has invalid e_shstrndx`、`.dynamic section header was not found`。\n- 该版本 APK 的 `.so` 已静态校验：33/34 个节头完整、全部节数据在文件内。"
+  "notes": "## v0.0.10（2026-11-22）\n\n### 新增\n\n- Android 对外 MCP 服务：Ktor CIO 绑定 127.0.0.1，`POST /mcp`（JSON-RPC）与\n  `GET /health`，协议与桌面端一致，可被同机客户端/其他 App 调用。\n- 技能（skills）：仓库根目录 `skills/` 会打包进 APK assets，Android 启动时扫描\n  `*/SKILL.md` 并注册；新增 9 个技能：市场脉搏、论文速读、安全通告、概念卡片、\n  观点对练、产品观察、信息源体检、会前速览、长文提纲（连同技术雷达共 10 个）。\n\n### 修复\n\n- 播客：改为「逐篇分段生成」——挑最近的 3 篇（云端 5 篇），每篇单独请求一次\n  `{\"title\",\"text\"}`，避免端侧小模型写长 JSON 被截断或只给小节名；标题/开场白\n  缺失时补默认值，开场白并入第一段语音，生成完整播客。\n\n### 优化\n\n- 正文（bodyLarge / bodyMedium / bodySmall）统一改用霞鹜文楷 LXGW WenKai，标题继续使用同一字体。\n- 顶栏「更多」菜单宽度跟随内容（`IntrinsicSize.Max` + min/max 兜底），不再铺满屏幕；\n  背景改为半透明渐变 + 高光描边 + 阴影的液态玻璃质感。\n- 首页顶部纸面：背景与描边统一使用底部圆角形状，去掉方角背景露在圆角外的色块断层。\n- 推理进度通知改为挂在 AI 网关层：无论端侧还是云端对话，发起推理时都会显示\n  常驻进度；端侧按已生成字数推进百分比，结束后自动收起。\n- 通知渠道改为 `IMPORTANCE_DEFAULT`（LOW 不会被系统提升），Android 16 上可被\n  系统呈现为 Live Update 胶囊。\n- 端侧模型卡片新增「允许提升通知 / 去开启」入口，直达\n  `ACTION_APP_NOTIFICATION_PROMOTION_SETTINGS`。"
 }
